@@ -1,0 +1,33 @@
+﻿@model GestionUsuarios.Models.Usuario
+
+
+<h2>Alta</h2>
+<h3>@ViewBag.Message</h3>
+
+
+@using (Html.BeginForm("Ingresar", "Usuario"))
+{
+
+    <div>
+        <label for="Nombre">Nombre:</label>
+        @Html.TextBox("Nombre");
+    </div>
+    <div>
+        <label for="ApellidoPaterno">Apellido Paterno:</label>
+        @Html.TextBox("ApellidoPaterno");
+    </div>
+    <div>
+        <label for="ApellidoMaterno">Apellido Materno:</label>
+        @Html.TextBox("ApellidoMaterno");
+    </div>
+    <div>
+        <label for="Telefono">Telefono:</label>
+        @Html.TextBox("Telefono");
+    </div>
+    <div>
+        <label for="Direccion">Direccion:</label>
+        @Html.TextBox("Direccion");
+    </div>
+    <br />
+    <input type = "submit" value = "Ingresar">
+}

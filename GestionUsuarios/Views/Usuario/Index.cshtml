@@ -1,0 +1,49 @@
+﻿@model IEnumerable<GestionUsuarios.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de usuarios</h2>
+
+<div>
+    @{
+            var grid = new WebGrid(Model, defaultSort: "Id");
+        }
+        @grid.GetHtml(tableStyle: "table table-striped table-inverse", columns : grid.Columns(
+        grid.Column("Nombre", header: "Nombre"),
+        grid.Column("ApellidoPaterno", header: "ApellidoPaterno"),
+        grid.Column("ApellidoMaterno", header: "ApellidoMaterno"),
+        grid.Column("Telefono", header: "Telefono"),
+        grid.Column("Direccion", header: "Direccion")
+    ))
+</div>
+<br/>
+@*<div>
+    <table id="memberlist">
+        <thead>
+            <tr>Nombre</tr>
+            <tr>Apellido Paterno</tr>
+            <tr>Apellido Materno</tr>
+            <tr>Telefono</tr>
+            <tr>Direccion</tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.ApellidoPaterno</td>
+                    <td>@item.ApellidoMaterno</td>
+                    <td>@item.Telefono</td>
+                    <td>@item.Direccion</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>*@
+
+<br />
+@Html.ActionLink("Nuevo usuario", "Alta", "Usuario")
+
+
